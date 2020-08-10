@@ -2,6 +2,7 @@
 
 namespace Ex5;
 
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class FizzBuzzTest extends TestCase
@@ -49,6 +50,7 @@ class FizzBuzzTest extends TestCase
 
     public function testShouldReturnVoidIfMinGreaterThanMax()
     {
-        $this->assertEquals('', $this->fizzBuzz->range(5,4));
+        $this->expectException(InvalidArgumentException::class);
+        $this->fizzBuzz->range(5,4);
     }
 }
