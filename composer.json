@@ -1,0 +1,15 @@
+{
+    "name": "matthieuaudemard/challenge",
+    "require": {
+        "phpunit/phpunit": "8.2"
+    },
+    "authors": [
+        {
+            "name": "Matthieu Audemard",
+            "email": "matthieu.audemard@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "": "src/" }
+    }
+}
