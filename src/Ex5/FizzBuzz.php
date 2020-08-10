@@ -17,20 +17,6 @@ class FizzBuzz
 {
     const MSG_INTERVAL_INVALIDE = 'Vous devez fournir un interval valide';
 
-    public function generate(int $int): string
-    {
-        if ($int % 3 === 0 && $int % 5 === 0) {
-            return 'FizzBuzz';
-        }
-        if ($int % 3 === 0) {
-            return 'Fizz';
-        }
-        if ($int % 5 === 0) {
-            return 'Buzz';
-        }
-        return $int;
-    }
-
     /**
      * Affiche tous les nombres 'FizzBuzz' compris dans l'interval $min et $max
      * @param int $min plus petite valeur
@@ -40,12 +26,6 @@ class FizzBuzz
      */
     public function range(int $min, int $max): string
     {
-        if ($min > $max) {
-            throw new InvalidArgumentException(self::MSG_INTERVAL_INVALIDE);
-        }
-        if ($min === $max) {
-            return $this->generate($min);
-        }
-        return $this->generate($min) . $this->range(++$min, $max);
+        return '';
     }
 }

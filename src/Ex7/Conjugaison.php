@@ -29,15 +29,6 @@ class Conjugaison
 
     const MSG_VERBE_NON_1ER_GROUPE = 'Vous devez fournir un verbe du 1er groupe';
 
-    private static $CONJUGAISON = [
-        'je' => 'e',
-        'tu' => 'es',
-        'il' => 'e',
-        'nous' => 'ons',
-        'vous' => 'ez',
-        'ils' => 'ent'
-    ];
-
     /**
      * Permet de conjuguer au présent de l'indicatif le verbe passé en paramètre
      * @param string $verbe Le verbe à conjuguer
@@ -46,30 +37,6 @@ class Conjugaison
      */
     public function conjuguer(string $verbe): string
     {
-        $matches = [];
-        if ($this->est1erGroupe($verbe, $matches)) {
-            $radical = $matches[1];
-            $result = [];
-            $liaison = substr($radical, -1) === 'g' ? 'e' : '';
-            foreach (self::$CONJUGAISON as $pronom => $conjug) {
-                if ($pronom === 'nous') {
-                    $result[] = $pronom . ' ' . $radical . $liaison . $conjug;
-                } else {
-                    $result[] = $pronom . ' ' . $radical . $conjug;
-                }
-            }
-            return join(PHP_EOL, $result);
-        }
-        throw new InvalidArgumentException(self::MSG_VERBE_NON_1ER_GROUPE);
-    }
-
-    /**
-     * @param string $verbe
-     * @param array $matches
-     * @return false|int
-     */
-    public function est1erGroupe(string $verbe, array &$matches)
-    {
-        return preg_match('#([a-zA-Z]{2,13})er$#', $verbe, $matches);
+        return '';
     }
 }

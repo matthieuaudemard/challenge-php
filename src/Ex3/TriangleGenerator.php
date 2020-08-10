@@ -46,15 +46,6 @@ class TriangleGenerator
      */
     public function generate(int $taille): string
     {
-        if ($taille < 0) {
-            throw new InvalidArgumentException(self::MSG_NB_NEGATIF);
-        }
-
-        $result = [];
-        for ($i = 0; $i < $taille; $i++) {
-            $star = str_repeat(self::STAR, $i + 1);
-            $result []= str_pad($star, $taille * strlen(self::STAR), self::SPACE, STR_PAD_BOTH);
-        }
-        return join(self::LINE_JUMP, $result);
+        return '';
     }
 }

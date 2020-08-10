@@ -30,7 +30,7 @@ class ConwayTest extends TestCase
      */
     public function testShouldReturn12If2Given()
     {
-        $this->assertEquals('2' . PHP_EOL . '12', $this->conway->draw(2, '2'));
+        $this->assertEquals('2' . Conway::SEPARATOR . '12', $this->conway->draw(2, '2'));
     }
 
     /**
@@ -47,20 +47,20 @@ class ConwayTest extends TestCase
     public function testForStart1AndLines15()
     {
         $expected =
-            '1' . PHP_EOL .
-            '11' . PHP_EOL .
-            '21' . PHP_EOL .
-            '1211' . PHP_EOL .
-            '111221' . PHP_EOL .
-            '312211' . PHP_EOL .
-            '13112221' . PHP_EOL .
-            '1113213211' . PHP_EOL .
-            '31131211131221'. PHP_EOL .
-            '13211311123113112211' . PHP_EOL .
-            '11131221133112132113212221' . PHP_EOL .
-            '3113112221232112111312211312113211' . PHP_EOL .
-            '1321132132111213122112311311222113111221131221' . PHP_EOL .
-            '11131221131211131231121113112221121321132132211331222113112211'. PHP_EOL .
+            '1' . Conway::SEPARATOR .
+            '11' . Conway::SEPARATOR .
+            '21' . Conway::SEPARATOR .
+            '1211' . Conway::SEPARATOR .
+            '111221' . Conway::SEPARATOR .
+            '312211' . Conway::SEPARATOR .
+            '13112221' . Conway::SEPARATOR .
+            '1113213211' . Conway::SEPARATOR .
+            '31131211131221'. Conway::SEPARATOR .
+            '13211311123113112211' . Conway::SEPARATOR .
+            '11131221133112132113212221' . Conway::SEPARATOR .
+            '3113112221232112111312211312113211' . Conway::SEPARATOR .
+            '1321132132111213122112311311222113111221131221' . Conway::SEPARATOR .
+            '11131221131211131231121113112221121321132132211331222113112211'. Conway::SEPARATOR .
             '311311222113111231131112132112311321322112111312211312111322212311322113212221';
         $this->assertEquals($expected, $this->conway->draw(15));
     }
